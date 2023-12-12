@@ -1,0 +1,5 @@
+[gd_resource type="SystemFont" format=3 uid="uid://dus37nk1nhce7"]
+
+[resource]
+font_names = PackedStringArray("Cascadia Code")
+generate_mipmaps = true

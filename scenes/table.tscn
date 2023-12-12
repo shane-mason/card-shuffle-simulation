@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://ul0bkonul83r"]
+
+[ext_resource type="Script" path="res://scripts/Deck.gd" id="1_kra05"]
+
+[node name="Table" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Deck" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_kra05")
