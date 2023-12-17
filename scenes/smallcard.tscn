@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpvqpsio1xhdr"]
+
+[ext_resource type="StyleBox" uid="uid://qcjc6xrn5ve4" path="res://styles/basic_card.tres" id="1_qtok7"]
+[ext_resource type="Script" path="res://SmallCard.gd" id="2_1gx8o"]
+[ext_resource type="Texture2D" uid="uid://cv6r7vcxwb5no" path="res://img/clubs.png" id="2_rl5aw"]
+[ext_resource type="SystemFont" uid="uid://dus37nk1nhce7" path="res://styles/system_font.tres" id="3_u1w41"]
+
+[node name="smallface" type="Panel"]
+offset_right = 36.0
+offset_bottom = 70.0
+theme_override_styles/panel = ExtResource("1_qtok7")
+script = ExtResource("2_1gx8o")
+
+[node name="Suit" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(18, 50)
+scale = Vector2(0.31, 0.31)
+texture = ExtResource("2_rl5aw")
+
+[node name="Face" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 3.0
+offset_bottom = 37.0
+grow_horizontal = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_u1w41")
+theme_override_font_sizes/normal_font_size = 29
+bbcode_enabled = true
+text = "[center]10[/center]"
+
+[node name="Dist" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = -3.0
+offset_right = 27.0
+offset_bottom = -2.0

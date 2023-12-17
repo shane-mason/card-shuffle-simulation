@@ -8,10 +8,11 @@
 [node name="Card" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 129.0
+offset_left = 140.0
 offset_top = 75.0
-offset_right = 354.0
+offset_right = 365.0
 offset_bottom = 425.0
+pivot_offset = Vector2(112.5, 175)
 script = ExtResource("1_d74fd")
 
 [node name="FacePanel" type="Panel" parent="."]
@@ -81,3 +82,34 @@ modulate = Color(0, 0, 0, 1)
 position = Vector2(112, 210)
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("4_63ll4")
+
+[node name="BackPanel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 225.0
+offset_bottom = 350.0
+theme_override_styles/panel = ExtResource("2_e4qjp")
+
+[node name="ColorRect" type="ColorRect" parent="BackPanel"]
+modulate = Color(0.152941, 0.368627, 0.537255, 1)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 12.0
+offset_right = 214.0
+offset_bottom = 338.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="BackPanel"]
+visible = false
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -33.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_0di3k")
+bbcode_enabled = true
+text = "[center]WrongDog
+Playing
+Cards[/center]"

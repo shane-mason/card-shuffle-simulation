@@ -1,14 +1,49 @@
-[gd_scene load_steps=2 format=3 uid="uid://ul0bkonul83r"]
+[gd_scene load_steps=4 format=3 uid="uid://ul0bkonul83r"]
 
 [ext_resource type="Script" path="res://scripts/Deck.gd" id="1_kra05"]
+[ext_resource type="Script" path="res://scripts/Dealer.gd" id="2_osaw2"]
+[ext_resource type="Script" path="res://scripts/FaceView.gd" id="3_rme35"]
 
 [node name="Table" type="Node2D"]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Deck" type="Control" parent="CanvasLayer"]
+[node name="Deck" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_kra05")
+
+[node name="riffle_cut_timer" type="Timer" parent="Deck"]
+wait_time = 0.6
+one_shot = true
+
+[node name="spin_timer" type="Timer" parent="Deck"]
+wait_time = 0.6
+one_shot = true
+
+[node name="merge_timer" type="Timer" parent="Deck"]
+wait_time = 0.6
+one_shot = true
+
+[node name="card_frame" type="Node2D" parent="Deck"]
+
+[node name="Dealer" type="Node" parent="." node_paths=PackedStringArray("deck")]
+script = ExtResource("2_osaw2")
+deck = NodePath("../Deck")
+
+[node name="FaceView" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("3_rme35")
+
+[node name="card_frame" type="Control" parent="FaceView"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="timeout" from="Deck/riffle_cut_timer" to="Deck" method="_on_riffle_cut_timer_timeout"]
+[connection signal="timeout" from="Deck/spin_timer" to="Deck" method="_on_spin_timer_timeout"]
+[connection signal="timeout" from="Deck/merge_timer" to="Deck" method="_on_merge_timer_timeout"]
